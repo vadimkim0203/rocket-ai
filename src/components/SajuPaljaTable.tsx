@@ -69,7 +69,7 @@ const SajuPaljaTable = () => {
 
             {/* Data Cells */}
             {sajuData[rowIndex]?.map((cellData, colIndex) => {
-              let cellClass = 'border-r border-b p-2 text-center text-sm';
+              const cellClass = 'border-r border-b p-2 text-center text-sm';
               let cellContent;
 
               if (rowIndex === 1 && Array.isArray(cellData)) {
