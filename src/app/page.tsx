@@ -6,6 +6,7 @@ import writingImg from '../../public/writingImg.png';
 import writingLetters from '../../public/writingLetters.png';
 import readingImg from '../../public/readingImg.png';
 import SajuPaljaTable from '@/components/SajuPaljaTable';
+import dialogBottom from '../../public/dialogBottom.png';
 
 export default function Home() {
   const backgroundText =
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="relative flex flex-col justify-center h-full max-w-[448px] min-w-[375px isolate">
-        <div className="absolute inset-0 z-0 text-[85px] leading-none text-white opacity-20 blur-sm select-none break-all tracking-wider text-justify">
+        <div className="absolute inset-0 z-30 text-[85px] leading-none text-white opacity-20 blur-sm select-none break-all tracking-wider text-justify">
           {backgroundText}
         </div>
         {/* CONTAINER A */}
@@ -24,7 +25,7 @@ export default function Home() {
             <p className="text-4xl font-semibold">나의 사주 팔자</p>
           </div>
           <div className="w-full flex flex-row justify-end pt-[42px] relative z-10">
-            <div className="w-full h-full pl-[195px]">
+            <div className="w-full h-full pl-[195px] mask-b-from-80% mask-b-to-100%">
               <Image
                 src={mainImg}
                 alt="Woman in traditional Korean clothing"
@@ -34,27 +35,6 @@ export default function Home() {
               />
             </div>
           </div>
-          {/* Bottom blur */}
-          {/* <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-20">
-            <div
-              className="w-full h-full backdrop-blur-sm"
-              style={{
-                background: `
-        linear-gradient(to bottom, 
-          transparent 0%,
-          transparent 60%,
-          rgba(243,242,239,0.01) 70%,
-          rgba(243,242,239,0.02) 75%,
-          rgba(243,242,239,0.04) 80%,
-          rgba(243,242,239,0.08) 85%,
-          rgba(243,242,239,0.15) 90%,
-          rgba(243,242,239,0.30) 95%,
-          rgba(243,242,239,0.60) 98%,
-          #f3f2ef 100%
-        )`,
-              }}
-            ></div>
-          </div> */}
         </div>
 
         {/* CONTAINER B */}
@@ -68,12 +48,12 @@ export default function Home() {
                 alt="Comments 슥슥"
               />
             </div>
-            <div className="-ml-8 z-10">
+            <div className="-ml-8 z-10 w-[120px] h-[285px] relative">
               <Image
                 src={writingImg}
-                width={120}
-                height={285}
+                fill
                 alt="Arm with brush"
+                className="object-contain"
               />
             </div>
           </div>
@@ -105,12 +85,28 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div className="relative mt-55 w-80 h-40 px-0 py-0">
+            <Image
+              src={dialogBottom}
+              fill
+              alt="Dialog box"
+              className="object-contain"
+            />
+            <div className="absolute inset-0 flex items-center justify-center sm:p-6">
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-medium text-center">
+                제가 oo님의 사주를
+                <br />
+                보기 쉽게 표로 정리했어요
+              </p>
+            </div>
+          </div>
         </div>
+
         {/* CONTAINER C */}
         <div className="flex flex-col">
           <div className="w-full max-w-[448px] h-[306px] relative bg-[#f3f2ef] -z-10">
             <Image
-              className="object-cover"
+              className="object-cover mask-b-from-80% mask-b-to-100%"
               src={readingImg}
               fill
               alt="Woman reading the book"

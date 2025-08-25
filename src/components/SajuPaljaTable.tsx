@@ -72,10 +72,9 @@ const SajuPaljaTable = () => {
               let cellClass = 'border-r border-b p-2 text-center text-sm';
               let cellContent;
 
-              // --- CASE 1: Row 1 (천간) - Render array as colored squares ---
               if (rowIndex === 1 && Array.isArray(cellData)) {
                 const boxColor =
-                  colIndex === 1 ? 'bg-[#c23030]' : 'bg-[#2f2f2f]'; // red for index[1], black for others
+                  colIndex === 1 ? 'bg-[#c23030]' : 'bg-[#2f2f2f]';
 
                 cellContent = (
                   <div
@@ -86,11 +85,7 @@ const SajuPaljaTable = () => {
                     ))}
                   </div>
                 );
-              }
-
-              // --- CASE 2: Row 2 (지지) - Single text in colorful square ---
-              else if (rowIndex === 2 && Array.isArray(cellData)) {
-                // Define colors for each column
+              } else if (rowIndex === 2 && Array.isArray(cellData)) {
                 const boxColors = [
                   'bg-[#18868b]',
                   'bg-[#c23030]',
@@ -109,10 +104,7 @@ const SajuPaljaTable = () => {
                     ))}
                   </div>
                 );
-              }
-
-              // --- CASE 3: Row 6 - Array handling (from before) ---
-              else if (Array.isArray(cellData)) {
+              } else if (Array.isArray(cellData)) {
                 cellContent = (
                   <div className="flex flex-col gap-1">
                     {cellData.map((item, i) => {
@@ -134,10 +126,7 @@ const SajuPaljaTable = () => {
                     })}
                   </div>
                 );
-              }
-
-              // --- Default case for other rows ---
-              else {
+              } else {
                 const match = cellData?.match(/^([^(]+)\s*(\(.+\))$/);
                 if (match) {
                   cellContent = (
